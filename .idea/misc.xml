@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/background.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/background1.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/button.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/container_components.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/grupo_usuario.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_email.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_pass.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/text_edits.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_cadastro.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_capa.xml" value="0.25" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_inicial.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_usuario.xml" value="0.19739583333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

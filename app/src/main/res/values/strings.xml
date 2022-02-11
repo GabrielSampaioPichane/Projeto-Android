@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Serviços_Gerais</string>
+    <string name="texto_cadastro">Cadastre-se aqui</string>
+    <string name="titulo_cadastro">Cadastre-se</string>
+    <string name="botao_cadastro">Cadastrar</string>
+    <string name="tela_login">Login</string>
+    <string name="logoff">Deslogar</string>
+</resources>

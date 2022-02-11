@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "386357637424",
+    "project_id": "servicosgerais-1515",
+    "storage_bucket": "servicosgerais-1515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386357637424:android:bc79fce617e4eaee2358f5",
+        "android_client_info": {
+          "package_name": "estudo.produto.servicos_gerais"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386357637424-6o116q5us2ab7nplj5sjr636kt2mu5m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpgpwoMYxFfEI7JUlgPiuc8bzdfz34PkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386357637424-6o116q5us2ab7nplj5sjr636kt2mu5m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
