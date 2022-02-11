@@ -114,27 +114,31 @@ class cadastro_Activity : AppCompatActivity() {
             delay(1300)
             intent = Intent(this, capa_Activity::class.java)
             startActivity(intent)
-
-
     }
 
     private fun dados_usuario() {
-
+            var senha = senhaUsuario.text.toString()
             var nome  = nomeUsuario.text.toString()
-
             var bancdads = FirebaseFirestore.getInstance()
 
+       //Lista para nome usuario
         var  pair : Pair <String, String> = Pair("Nome", nome)
-             val usuario : Map <String, String> = mapOf(pair)
-          var idusuario = Firebase.auth.currentUser.toString()
+        var pair1 : Pair <String, String> = Pair ("Senha", senha)
 
+        val usuario : Map <String, String> = mapOf(pair,pair1)
+
+        //Captura dados atuais inseridos pelo usuario
+        var idusuario = Firebase.auth.currentUser.toString()
+
+         //Salva dados no Firestore/firabase
         bancdads.collection("banco_de_usuários").document(idusuario).set(usuario).addOnSuccessListener {
 
                 Log.d("bancdads", "Sucesso ao salvar")
             }.addOnFailureListener() {
                 Log.d("bancdads", "Falha ao salvar")
             }
-        }
+
+           }
 }
 
 
