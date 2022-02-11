@@ -111,7 +111,7 @@ class cadastro_Activity : AppCompatActivity() {
         }
     }
    private suspend fun timerbackslide(){
-            delay(1000)
+            delay(1300)
             intent = Intent(this, capa_Activity::class.java)
             startActivity(intent)
 
@@ -124,7 +124,7 @@ class cadastro_Activity : AppCompatActivity() {
 
             var bancdads = FirebaseFirestore.getInstance()
 
-        var  pair : Pair <String, String> = Pair("nome", nome)
+        var  pair : Pair <String, String> = Pair("Nome", nome)
              val usuario : Map <String, String> = mapOf(pair)
           var idusuario = Firebase.auth.currentUser.toString()
 
