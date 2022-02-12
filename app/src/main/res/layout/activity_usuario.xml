@@ -50,13 +50,13 @@
          />
 
       <TextView
+          android:id="@+id/text_dados_nome"
           android:drawableStart="@drawable/ic_user"
-          style="@style/EditText"
+          android:hint=""
           android:layout_marginTop="20dp"
-          android:id="@+id/Dados_Nome"
           android:textColor="@color/black"
           android:textStyle="bold"
-          android:textSize="24dp"
+          android:textSize="30dp"
           android:layout_width="300dp"
           android:layout_height="50dp"
           app:layout_constraintStart_toStartOf="@id/Dados_usuario"
@@ -64,24 +64,25 @@
           app:layout_constraintTop_toTopOf="@id/Dados_usuario"
           />
     <TextView
+        android:id="@+id/text_dados_email"
         android:drawableStart="@drawable/ic_email"
-        style="@style/EditText"
+        android:hint=""
         android:layout_marginTop="20dp"
-        android:id="@+id/Dados_email"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="24dp"
+        android:textSize="30dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="@id/Dados_usuario"
         app:layout_constraintEnd_toEndOf="@+id/Dados_usuario"
-        app:layout_constraintTop_toBottomOf="@id/Dados_Nome"
+        app:layout_constraintTop_toBottomOf="@id/text_dados_nome"
         />
 
     <Button
+        android:id="@+id/bt_deslogar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Dados_email"
+        app:layout_constraintTop_toBottomOf="@+id/text_dados_email"
         style="@style/Botao"
         android:text="@string/logoff"
         />

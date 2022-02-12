@@ -35,7 +35,6 @@ class cadastro_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-        //Podem ser acessador em qualquer função
         cadastrar = bt_cadastro
         emailUsuario = edit_useremail
         senhaUsuario = edit_usersenha
@@ -66,13 +65,14 @@ class cadastro_Activity : AppCompatActivity() {
             snackbar.setTextColor(Color.WHITE)
             snackbar.show()
             error = true
+
         } else {
-            cadastrar_usuario()
+            cadastrarUsuario()
         }
         return error
     }
     //Cadastro no Firebase
-    private fun cadastrar_usuario() {
+    private fun cadastrarUsuario() {
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(
             emailUsuario.text.toString(),
@@ -84,8 +84,10 @@ class cadastro_Activity : AppCompatActivity() {
                 snackbar.setBackgroundTint(Color.BLACK)
                 snackbar.setTextColor(Color.WHITE)
                 snackbar.show()
-                dados_usuario()
-               lifecycleScope.launch{timerbackslide()}
+
+                dadosUsuario()
+
+               lifecycleScope.launch{timerBackslide()}
             } else {
 
                 var falha: String = ""
@@ -110,28 +112,29 @@ class cadastro_Activity : AppCompatActivity() {
 
         }
     }
-   private suspend fun timerbackslide(){
+   private suspend fun timerBackslide(){
             delay(1300)
             intent = Intent(this, capa_Activity::class.java)
             startActivity(intent)
     }
 
-    private fun dados_usuario() {
-            var senha = senhaUsuario.text.toString()
+    private fun dadosUsuario() {
+            var email = emailUsuario.text.toString()
             var nome  = nomeUsuario.text.toString()
+            var senha = senhaUsuario.text.toString()
             var bancdads = FirebaseFirestore.getInstance()
 
        //Lista para nome usuario
         var  pair : Pair <String, String> = Pair("Nome", nome)
         var pair1 : Pair <String, String> = Pair ("Senha", senha)
+        var pair2 : Pair <String, String> = Pair("Email", email)
+        val usuario : Map <String, String> = mapOf(pair,pair1,pair2)
 
-        val usuario : Map <String, String> = mapOf(pair,pair1)
-
-        //Captura dados atuais inseridos pelo usuario
-        var idusuario = Firebase.auth.currentUser.toString()
+        //Captura dados atuais do usuario no banco de dados
+        var idUsuario = Firebase.auth.currentUser.toString()
 
          //Salva dados no Firestore/firabase
-        bancdads.collection("banco_de_usuários").document(idusuario).set(usuario).addOnSuccessListener {
+        bancdads.collection("banco_de_usuários").document(idUsuario).set(usuario).addOnSuccessListener {
 
                 Log.d("bancdads", "Sucesso ao salvar")
             }.addOnFailureListener() {
