@@ -4,6 +4,6 @@
 
 # Esse projeto com como intuito o desenvolvimento de uma aplicativo android utilizando a ferramenta AndroidStudio com a linguagem Kotlin
 
-# O App tem como objetivo ajudar no dia a dia com problemas como trocar uma tomada, certificar vedações etc, com cursos,textos e video - aulas
+# O App tem como objetivo ajudar no dia a dia com problemas como trocar uma tomada, certificar vedações etc, com cursos,textos e video - aulas filtradas da internet
 
 # Para utiliza-lo deve se ter a ferramenta AndroidStudio ou aguardar lançamento do mesmo na PlayStore para testes 
