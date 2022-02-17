@@ -1,10 +1,8 @@
 package estudo.produto.servicos_gerais
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -20,8 +18,6 @@ import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.*
-import kotlin.collections.HashMap
-import kotlin.concurrent.thread
 
 class cadastro_Activity : AppCompatActivity() {
 
@@ -125,16 +121,17 @@ class cadastro_Activity : AppCompatActivity() {
             var bancdads = FirebaseFirestore.getInstance()
 
        //Lista para nome usuario
-        var  pair : Pair <String, String> = Pair("Nome", nome)
-        var pair1 : Pair <String, String> = Pair ("Senha", senha)
-        var pair2 : Pair <String, String> = Pair("Email", email)
-        val usuario : Map <String, String> = mapOf(pair,pair1,pair2)
+            val usuario = hashMapOf<String,String>(
+            "Nome" to nome,
+            "Email" to email,
+            "Senha" to senha
+        )
 
         //Captura dados atuais do usuario no banco de dados
-        var idUsuario = Firebase.auth.currentUser.toString()
+        var idUsuario = Firebase.auth.currentUser?.uid.toString()
 
          //Salva dados no Firestore/firabase
-        bancdads.collection("banco_de_usuários").document(idUsuario).set(usuario).addOnSuccessListener {
+        bancdads.collection("banco_usuários").document(idUsuario).set(usuario).addOnSuccessListener {
 
                 Log.d("bancdads", "Sucesso ao salvar")
             }.addOnFailureListener() {
@@ -143,5 +140,4 @@ class cadastro_Activity : AppCompatActivity() {
 
            }
 }
-
 

@@ -11,7 +11,9 @@
         android:theme="@style/Theme.Servicos_Gerais">
         <activity
             android:name=".inicial_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".usuario_Activity"
             android:exported="false"

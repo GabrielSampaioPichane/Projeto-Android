@@ -1,15 +1,21 @@
 package estudo.produto.servicos_gerais
 
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_usuario.*
+import kotlin.math.log
 
 class usuario_Activity : AppCompatActivity() {
     private lateinit var nomeUsuario : TextView
@@ -28,7 +34,6 @@ class usuario_Activity : AppCompatActivity() {
 
         deslogar.setOnClickListener(){
             FirebaseAuth.getInstance().signOut()
-
             intent = Intent(this, capa_Activity::class.java)
             startActivity(intent)
         }
@@ -36,16 +41,24 @@ class usuario_Activity : AppCompatActivity() {
   //Não está funcionando a recuperação dos dados do usuario
     override fun onStart() {
         super.onStart()
-        var bancdads = FirebaseFirestore.getInstance()
-        var idUsuario = Firebase.auth.currentUser.toString()
 
-        bancdads.collection("banco_de_usuários").document(idUsuario)
-            .addSnapshotListener { snapshot, _ ->
-                if (snapshot != null) {
-                    nomeUsuario.text = snapshot.getString("Nome")
-                    emailUsuario.text = snapshot.getString("Email")
-                }
-            }
+        var bancdads = FirebaseFirestore.getInstance()
+        var idUsuario = Firebase.auth.currentUser?.uid.toString()
+
+
+      bancdads.collection("banco_usuários").document(idUsuario).get()
+          .addOnSuccessListener { documentSnapshot ->
+
+            if ( documentSnapshot != null) {
+                nomeUsuario.text = documentSnapshot.getString("Nome")
+                emailUsuario.text = documentSnapshot.getString("Email")
+
+                Log.d( "cd","Buscou dos dados")}
+
+            }.addOnFailureListener { exception ->
+
+              Log.d("bd", "falho em recuperar os dados ", exception)}
+
 
 
     }

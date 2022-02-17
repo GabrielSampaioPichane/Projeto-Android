@@ -55,7 +55,7 @@ class capa_Activity : AppCompatActivity() {
             }
 
         private fun login_usuarios() {
-            val barra_de_progresso = Widget_progressbar
+            val barraDeProgresso = Widget_progressbar
 
             FirebaseAuth.getInstance().signInWithEmailAndPassword(
                 emailLogin.text.toString(),
@@ -63,7 +63,7 @@ class capa_Activity : AppCompatActivity() {
             ).addOnCompleteListener() { task: Task<AuthResult> ->
 
                 if(task.isSuccessful){
-                barra_de_progresso.setVisibility(View.VISIBLE)
+                barraDeProgresso.setVisibility(View.VISIBLE)
                   lifecycleScope.launch{tela_principal()}
                 }else{
                     try{
@@ -80,7 +80,8 @@ class capa_Activity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val actuser = Firebase.auth.currentUser
+        //Verifica se o usuario atual/ultimo a fazer login está logado
+        val actuser = Firebase.auth.currentUser?.uid
        if(actuser != null){
            lifecycleScope.launch{tela_principal()}
        }
