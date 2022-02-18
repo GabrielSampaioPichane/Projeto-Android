@@ -12,14 +12,14 @@ class HomeActivity : AppCompatActivity() {
      private lateinit var perfil : TextView
 
      override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityInicialBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+         binding = ActivityInicialBinding.inflate(layoutInflater)
+         super.onCreate(savedInstanceState)
+         setContentView(binding.root)
 
          perfil = binding.imgPerfil
 
          perfil.setOnClickListener{
-         var  intent = Intent(this, UsuarioActivity::class.java)
+         val intent = Intent(this, UsuarioActivity::class.java)
             startActivity(intent)
          }
     }

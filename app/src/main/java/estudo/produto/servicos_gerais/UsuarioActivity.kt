@@ -21,10 +21,10 @@ class UsuarioActivity : AppCompatActivity() {
     private lateinit var voltar : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityUsuarioBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding = ActivityUsuarioBinding.inflate(layoutInflater)
         nomeUsuario = binding.textDadosNome
         emailUsuario = binding.textDadosEmail
         deslogar = binding.btDeslogar

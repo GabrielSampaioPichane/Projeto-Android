@@ -28,8 +28,9 @@ class CadastroActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
    private lateinit var voltar : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         binding = ActivityCadastroBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+
         setContentView(binding.root)
         voltar = binding.botaoVoltar
         cadastrar = binding.btCadastro

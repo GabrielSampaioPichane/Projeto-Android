@@ -27,8 +27,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var cadastrar : TextView
     private lateinit var login : Button
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         binding = ActivityCapaBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         emailLogin = binding.editLoginEmail
