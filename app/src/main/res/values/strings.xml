@@ -5,4 +5,5 @@
     <string name="botao_cadastro">Cadastrar</string>
     <string name="tela_login">Login</string>
     <string name="logoff">Deslogar</string>
+    <string name="todo">TODO</string>
 </resources>

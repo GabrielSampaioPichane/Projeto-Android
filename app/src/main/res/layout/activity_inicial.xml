@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inicial_Activity"
+    tools:context=".HomeActivity"
     android:background="@drawable/background"
     >
 
@@ -20,16 +20,17 @@
          android:layout_height="50dp"
          />
 
-    <ImageView
-        android:id="@+id/ic_perfil"
+    <TextView
+        android:background="@drawable/grupo_usuario"
+        android:id="@+id/img_perfil"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:layout_constraintStart_toStartOf="@id/utlitarios"
         app:layout_constraintEnd_toEndOf="@id/utlitarios"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_user"
+        app:layout_constraintTop_toTopOf="@id/utlitarios"
+        android:layout_marginEnd="-300dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_user"
         />
     <View
         android:layout_marginRight="20dp"

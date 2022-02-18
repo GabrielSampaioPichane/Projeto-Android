@@ -10,21 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Servicos_Gerais">
         <activity
-            android:name=".inicial_Activity"
+            android:name=".HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".usuario_Activity"
+            android:name=".UsuarioActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".cadastro_Activity"
+            android:name=".CadastroActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".capa_Activity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

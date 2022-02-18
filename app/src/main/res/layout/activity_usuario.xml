@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".usuario_Activity"
+    tools:context=".UsuarioActivity"
     android:background="@drawable/background"
     >
 
 
     <View
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/perfil_usario"
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -19,64 +19,63 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-    <TextView
-        android:id="@+id/botao_voltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        style="@style/Botao"
+        android:id="@+id/bt_voltar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/perfil_usario"
-        android:layout_marginRight="450dp"
-        android:layout_marginBottom="100dp"
-        android:drawableStart="@drawable/ic_voltar"
+        android:layout_marginEnd="320dp"
+        android:layout_marginTop="30dp"
+        android:drawableBottom="@drawable/ic_voltar"
         />
 
     <ImageView
-                android:layout_width="100dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="@id/perfil_usario"
         app:layout_constraintEnd_toEndOf="@+id/perfil_usario"
         app:layout_constraintTop_toTopOf="@id/perfil_usario"
         app:layout_constraintBottom_toBottomOf="@id/perfil_usario"
         android:src="@drawable/ic_user"
-        />
+        android:contentDescription="@string/todo" />
 
     <View
         android:id="@+id/Dados_usuario"
         style="@style/Grupodecompoentes"
-       app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perfil_usario"
-         />
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usario" />
 
-      <TextView
+    <TextView
           android:id="@+id/text_dados_nome"
-          android:drawableStart="@drawable/ic_user"
-          android:text = ""
+        android:text = ""
           android:layout_marginTop="40dp"
           android:textColor="@color/black"
           android:textStyle="bold"
-          android:textSize="20dp"
+          android:textSize="20sp"
           android:layout_width="300dp"
           android:layout_height="30dp"
           app:layout_constraintStart_toStartOf="@id/Dados_usuario"
           app:layout_constraintEnd_toEndOf="@+id/Dados_usuario"
           app:layout_constraintTop_toTopOf="@id/Dados_usuario"
-          />
+        app:drawableStartCompat="@drawable/ic_user" />
     <TextView
         android:id="@+id/text_dados_email"
-        android:drawableStart="@drawable/ic_email"
         android:text= ""
         android:layout_marginTop="30dp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="30sp"
         android:layout_width="300dp"
         android:layout_height="30dp"
         app:layout_constraintStart_toStartOf="@id/Dados_usuario"
         app:layout_constraintEnd_toEndOf="@+id/Dados_usuario"
         app:layout_constraintTop_toBottomOf="@id/text_dados_nome"
-        />
+        app:drawableStartCompat="@drawable/ic_email" />
 
     <Button
         android:id="@+id/bt_deslogar"
