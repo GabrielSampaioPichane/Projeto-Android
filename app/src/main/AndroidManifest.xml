@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="estudo.produto.servicos_gerais">
+    package="estudo.produto.presenter">
 
     <application
         android:allowBackup="true"
@@ -8,23 +8,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+         android:name=".Myapp"
         android:theme="@style/Theme.Servicos_Gerais">
         <activity
-            android:name=".HomeActivity"
+            android:name="estudo.produto.presenter.presenter.HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".UsuarioActivity"
+            android:name="estudo.produto.presenter.presenter.UsuarioActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".CadastroActivity"
+            android:name="estudo.produto.presenter.presenter.CadastroActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
+            android:name="estudo.produto.presenter.presenter.LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
