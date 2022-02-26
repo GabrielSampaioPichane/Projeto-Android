@@ -33,9 +33,11 @@ class UserFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
      binding = FragmentUsuarioBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+
         nomeUser = binding.textDadosNome
         emailUser = binding.textDadosEmail
         deslogar = binding.btDeslogar
+
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         deslogar.setOnClickListener(){
@@ -46,17 +48,17 @@ class UserFragment : Fragment() {
         }
     }
 
-
+         //carrega as principais funções
        override fun onStart() {
-           super.onStart()
            viewModel.atualizarDadosPerfilUsurio()
+           super.onStart()
            lifecycleScope.launch{ dadosAtualizados()}
 
        }
 
-
+           //recolhe os dados do banco de dados pelo ViewModel e exibe
        private suspend fun dadosAtualizados(){
-         delay(1180)
+         delay(1850)
           nomeUser.text = viewModel.nome
           emailUser.text = viewModel.email
 

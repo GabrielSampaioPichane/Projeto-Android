@@ -21,11 +21,39 @@
          android:layout_height="50dp"
          />
 
-        <TextView
+    <TextView
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="-240dp"
+        android:id="@+id/bt_perfil"
+        android:background="@drawable/ic_user"
+        android:layout_marginTop="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/utlitarios"
+        app:layout_constraintStart_toStartOf="@id/utlitarios"
+        app:layout_constraintEnd_toEndOf="@id/utlitarios"
+        app:layout_constraintTop_toTopOf="@id/utlitarios"
+        app:drawableStartCompat="@drawable/ic_user" />
+
+    <TextView
+        android:layout_marginBottom="4dp"
+
+        android:id="@+id/bt_busca"
+        android:background="@drawable/ic_search"
+        android:layout_marginTop="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/utlitarios"
+        app:layout_constraintStart_toStartOf="@id/utlitarios"
+        app:layout_constraintEnd_toEndOf="@id/utlitarios"
+        app:layout_constraintTop_toTopOf="@id/utlitarios"
+        app:drawableStartCompat="@drawable/ic_search" />
+
+    <TextView
             android:layout_marginBottom="4dp"
-            android:layout_marginRight="-240dp"
-            android:id="@+id/bt_perfil"
-            android:background="@drawable/ic_user"
+            android:layout_marginEnd= "240dp"
+            android:id="@+id/bt_notice"
+            android:background="@drawable/ic_notice"
             android:layout_marginTop="7dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +61,7 @@
             app:layout_constraintStart_toStartOf="@id/utlitarios"
             app:layout_constraintEnd_toEndOf="@id/utlitarios"
             app:layout_constraintTop_toTopOf="@id/utlitarios"
-            app:drawableStartCompat="@drawable/ic_user" />
+            app:drawableStartCompat="@drawable/ic_notice" />
 
     <androidx.fragment.app.FragmentContainerView
 

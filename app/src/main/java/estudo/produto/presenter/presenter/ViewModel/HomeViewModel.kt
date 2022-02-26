@@ -1,6 +1,7 @@
 package estudo.produto.presenter.presenter.ViewModel
 
 import android.util.Log
+import android.webkit.WebViewClient
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,7 @@ import estudo.produto.presenter.databinding.FragmentUsuarioBinding
 class HomeViewModel :ViewModel(){
 
 
-
+    var url = ""
     var nome = ""
     var email = ""
 
@@ -38,6 +39,11 @@ class HomeViewModel :ViewModel(){
 
         }.addOnFailureListener { exception ->
                 Log.d("bd", "falho em recuperar os dados ", exception)}
+    }
+
+    fun urlWebView(){
+         url =  "https://www.google.com"
+
     }
 
     }
