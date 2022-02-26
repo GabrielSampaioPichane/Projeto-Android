@@ -18,15 +18,23 @@ class HomeActivity : AppCompatActivity() {
      private lateinit var binding: ActivityInicialBinding
      private lateinit var userFragment : UserFragment
      private lateinit var viewModel : HomeViewModel
+     private lateinit var perfil : TextView
      override fun onCreate(savedInstanceState: Bundle?) {
          binding = ActivityInicialBinding.inflate(layoutInflater)
          super.onCreate(savedInstanceState)
          setContentView(binding.root)
          viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
+         perfil = binding.btPerfil
+
+
          userFragment = UserFragment()
 
-            setFragment(userFragment)
+         perfil.setOnClickListener{
+             setFragment(userFragment)
+         }
+
+
     }
 
        private  fun setFragment(fragment: Fragment){
