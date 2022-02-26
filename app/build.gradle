@@ -75,6 +75,6 @@ dependencies {
 // Koin for JUnit 5
     testImplementation "io.insert-koin:koin-test-junit5:$koin_version"
 
-
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
 }
