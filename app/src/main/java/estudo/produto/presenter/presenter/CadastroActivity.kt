@@ -15,11 +15,14 @@ import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import estudo.produto.presenter.DadosRepositoryViewModels.UserViewModel
 import estudo.produto.presenter.databinding.ActivityCadastroBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CadastroActivity : AppCompatActivity() {
+    private val viewModel : UserViewModel by viewModel()
    private lateinit var binding: ActivityCadastroBinding
     private lateinit var emailUsuario: EditText
     private lateinit var senhaUsuario: EditText
@@ -38,12 +41,6 @@ class CadastroActivity : AppCompatActivity() {
         senhaUsuario = binding.editUsersenha
         nomeUsuario = binding.editUsernome
         auth = Firebase.auth
-
-        //Volta para a tela de Login
-        voltar.setOnClickListener {
-          val  intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
 
         //Efetua a area de cadastro
         cadastrar.setOnClickListener {
@@ -82,8 +79,8 @@ class CadastroActivity : AppCompatActivity() {
                 snackbar.setBackgroundTint(Color.BLACK)
                 snackbar.setTextColor(Color.WHITE)
                 snackbar.show()
-
-                dadosUsuario()
+               viewModel.cadastroDadosUsuario()
+                envioDados()
 
                lifecycleScope.launch{timerBackslide()}
             } else {
@@ -114,33 +111,14 @@ class CadastroActivity : AppCompatActivity() {
             delay(1300)
           val  intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+       finish()
     }
 
-   private fun dadosUsuario( )  {
+   private fun envioDados( ) {
+     viewModel.emailCadastro = emailUsuario.text.toString()
+     viewModel.senhaCadastro =  senhaUsuario.text.toString()
+     viewModel.nomeCadastro  = nomeUsuario.text.toString()
+   }
 
-            val email = emailUsuario.text.toString()
-            val nome  = nomeUsuario.text.toString()
-            val senha = senhaUsuario.text.toString()
-            val bancoDeDados = FirebaseFirestore.getInstance()
-
-       //Lista para nome usuario
-            val usuario = hashMapOf(
-            "Nome" to nome,
-            "Email" to email,
-            "Senha" to senha
-        )
-
-        //Captura dados atuais do usuario no banco de dados
-        val idUsuario = Firebase.auth.currentUser?.uid.toString()
-
-         //Salva dados no Firestore/firabase
-        bancoDeDados.collection("banco_usuários").document(idUsuario).set(usuario).addOnSuccessListener {
-
-                Log.d("bancdads", "Sucesso ao salvar")
-            }.addOnFailureListener {
-                Log.d("bancdads", "Falha ao salvar")
-            }
-
-           }
 }
 

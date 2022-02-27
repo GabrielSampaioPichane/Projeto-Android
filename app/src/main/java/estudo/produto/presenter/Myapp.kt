@@ -1,21 +1,21 @@
 package estudo.produto.presenter
 
 import android.app.Application
-import android.os.Bundle
-import android.os.PersistableBundle
-import androidx.appcompat.app.AppCompatActivity
+import estudo.produto.presenter.InjectDemp.homeModule
+import estudo.produto.presenter.InjectDemp.userModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
+
 import org.koin.core.context.startKoin
 
-class Myapp :Application () {
+class Myapp : Application (){
     override fun onCreate() {
         super.onCreate()
 
-        startKoin(){
-            androidLogger()
+        startKoin {
             androidContext(this@Myapp)
 
+            modules(homeModule, userModule)
         }
+
     }
 }

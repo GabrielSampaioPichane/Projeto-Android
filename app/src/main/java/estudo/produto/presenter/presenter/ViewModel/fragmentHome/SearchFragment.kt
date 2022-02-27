@@ -12,18 +12,18 @@ import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import estudo.produto.presenter.databinding.FragmentSearchBinding
-import estudo.produto.presenter.presenter.ViewModel.HomeViewModel
+import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
-    private lateinit var viewModel: HomeViewModel
+    private  val viewModel: HomeViewModel by viewModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = FragmentSearchBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.urlWebView()
 
         /*detecta os eventos de click do botao de voltar do celular, e volta as

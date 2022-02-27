@@ -2,7 +2,6 @@ package estudo.produto.presenter.presenter.ViewModel.fragmentHome
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,20 +10,17 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
-import estudo.produto.presenter.R
 import estudo.produto.presenter.databinding.FragmentUsuarioBinding
 import estudo.produto.presenter.presenter.LoginActivity
-import estudo.produto.presenter.presenter.ViewModel.HomeViewModel
+import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
+import estudo.produto.presenter.DadosRepositoryViewModels.UserViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.koin.android.ext.android.get
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class UserFragment : Fragment() {
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: UserViewModel by viewModel()
     private lateinit var binding: FragmentUsuarioBinding
     private lateinit var nomeUser : TextView
     private lateinit var emailUser : TextView
@@ -37,8 +33,6 @@ class UserFragment : Fragment() {
         nomeUser = binding.textDadosNome
         emailUser = binding.textDadosEmail
         deslogar = binding.btDeslogar
-
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         deslogar.setOnClickListener(){
             viewModel.deslogar()
