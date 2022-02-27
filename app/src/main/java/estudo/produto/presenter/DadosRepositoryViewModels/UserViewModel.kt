@@ -56,7 +56,6 @@ class UserViewModel : ViewModel(){
                 nome = documentSnapshot.getString("Nome").toString()
                 email  = documentSnapshot.getString("Email").toString()
 
-
                 Log.d( "cd","Buscou dos dados")
             }
 

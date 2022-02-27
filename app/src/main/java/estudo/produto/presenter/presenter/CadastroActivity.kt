@@ -33,13 +33,16 @@ class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-
         setContentView(binding.root)
         voltar = binding.botaoVoltar
         cadastrar = binding.btCadastro
+
         emailUsuario = binding.editUseremail
+
         senhaUsuario = binding.editUsersenha
+
         nomeUsuario = binding.editUsernome
+
         auth = Firebase.auth
 
         //Efetua a area de cadastro
@@ -79,10 +82,9 @@ class CadastroActivity : AppCompatActivity() {
                 snackbar.setBackgroundTint(Color.BLACK)
                 snackbar.setTextColor(Color.WHITE)
                 snackbar.show()
-               viewModel.cadastroDadosUsuario()
                 envioDados()
-
-               lifecycleScope.launch{timerBackslide()}
+                viewModel.cadastroDadosUsuario()
+                lifecycleScope.launch{timerBackslide()}
             } else {
 
                 var falha = ""
@@ -114,7 +116,7 @@ class CadastroActivity : AppCompatActivity() {
        finish()
     }
 
-   private fun envioDados( ) {
+    private fun envioDados( ) {
      viewModel.emailCadastro = emailUsuario.text.toString()
      viewModel.senhaCadastro =  senhaUsuario.text.toString()
      viewModel.nomeCadastro  = nomeUsuario.text.toString()
