@@ -4,13 +4,17 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.whenStarted
 import estudo.produto.presenter.R
 import estudo.produto.presenter.databinding.ActivityInicialBinding
 import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
+import estudo.produto.presenter.DadosRepositoryViewModels.UserViewModel
 import estudo.produto.presenter.presenter.ViewModel.fragmentHome.NoticeFragment
 import estudo.produto.presenter.presenter.ViewModel.fragmentHome.SearchFragment
 import estudo.produto.presenter.presenter.ViewModel.fragmentHome.UserFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HomeActivity : AppCompatActivity() {
@@ -18,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
      private lateinit var userFragment : UserFragment
      private lateinit var noticeFragment : NoticeFragment
      private lateinit var searchFragment : SearchFragment
-     private lateinit var viewModel : HomeViewModel
+     private  val viewModel : HomeViewModel by viewModel()
      private lateinit var perfil : TextView
      private lateinit var notice : TextView
      private lateinit var search : TextView
@@ -26,7 +30,6 @@ class HomeActivity : AppCompatActivity() {
          binding = ActivityInicialBinding.inflate(layoutInflater)
          super.onCreate(savedInstanceState)
          setContentView(binding.root)
-         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
          notice = binding.btNotice
          search = binding.btBusca
          perfil = binding.btPerfil
@@ -39,6 +42,8 @@ class HomeActivity : AppCompatActivity() {
 
         setFragment(noticeFragment)
 
+
+
     }
 
        private  fun setFragment(fragment: Fragment){
@@ -50,7 +55,8 @@ class HomeActivity : AppCompatActivity() {
       private fun changeFragmentOnClick () {
 
           perfil.setOnClickListener{
-              setFragment(userFragment)
+
+                  setFragment(userFragment)
           }
 
         notice.setOnClickListener{

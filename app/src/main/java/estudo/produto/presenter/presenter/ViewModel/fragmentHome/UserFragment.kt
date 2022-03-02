@@ -33,7 +33,6 @@ class UserFragment : Fragment() {
         nomeUser = binding.textDadosNome
         emailUser = binding.textDadosEmail
         deslogar = binding.btDeslogar
-
         deslogar.setOnClickListener(){
             viewModel.deslogar()
          val intent = Intent (activity,LoginActivity::class.java)
@@ -41,18 +40,16 @@ class UserFragment : Fragment() {
 
         }
     }
-
-         //carrega as principais funções
+    //carrega as principais funções
        override fun onStart() {
-           viewModel.atualizarDadosPerfilUsurio()
-           super.onStart()
+             viewModel.atualizarDadosPerfilUsurio()
+             super.onStart()
            lifecycleScope.launch{ dadosAtualizados()}
-
        }
 
-           //recolhe os dados do banco de dados pelo ViewModel e exibe
+    //recolhe os dados do banco de dados pelo ViewModel e exibe
        private suspend fun dadosAtualizados(){
-         delay(1850)
+         delay(800)
           nomeUser.text = viewModel.nome
           emailUser.text = viewModel.email
 

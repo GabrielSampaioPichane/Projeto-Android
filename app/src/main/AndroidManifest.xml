@@ -14,17 +14,17 @@
         <activity
             android:name="estudo.produto.presenter.presenter.HomeActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             />
         
         <activity
             android:name="estudo.produto.presenter.presenter.CadastroActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="estudo.produto.presenter.presenter.LoginActivity"
             android:exported="true"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

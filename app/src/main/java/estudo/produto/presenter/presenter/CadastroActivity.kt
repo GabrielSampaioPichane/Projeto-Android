@@ -34,7 +34,7 @@ class CadastroActivity : AppCompatActivity() {
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        voltar = binding.botaoVoltar
+
         cadastrar = binding.btCadastro
 
         emailUsuario = binding.editUseremail

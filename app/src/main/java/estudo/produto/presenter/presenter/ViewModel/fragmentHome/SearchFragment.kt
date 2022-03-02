@@ -49,12 +49,13 @@ class SearchFragment : Fragment() {
          super.onStart()
         //navegação pelo google
         binding.webview.apply {
+
             settings.safeBrowsingEnabled = true
             settings.javaScriptEnabled = true
             webViewClient = WebViewClient()
-           loadUrl(viewModel.url)
+            loadUrl(viewModel.url)
 
-       }
+        }
     }
 
     override fun onCreateView(
