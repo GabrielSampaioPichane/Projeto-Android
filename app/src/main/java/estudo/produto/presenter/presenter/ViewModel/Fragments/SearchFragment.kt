@@ -1,4 +1,4 @@
-package estudo.produto.presenter.presenter.ViewModel.fragmentHome
+package estudo.produto.presenter.presenter.ViewModel.Fragments
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.ViewModelProvider
 import estudo.produto.presenter.databinding.FragmentSearchBinding
 import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel

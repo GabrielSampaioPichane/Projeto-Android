@@ -15,21 +15,27 @@ import kotlinx.coroutines.launch
 class UserViewModel : ViewModel(){
 
 
-
+    //Varias que iram ser exibidas na interface do usuario
     var nome = ""
     var email = ""
 
+    //Variaveis usadas na coleta dos dados para cadastro
     var emailCadastro = ""
     var nomeCadastro  = ""
     var senhaCadastro = ""
 
+
+    //Captura dados atuais do usuario no banco de dados
+    val idUsuario = Firebase.auth.currentUser?.uid.toString()
+    //Acessa o estado do banco de dados
+    val bancoDeDados = FirebaseFirestore.getInstance()
+
+    //Desloga o usuario do Firebase
     fun deslogar(){
         FirebaseAuth.getInstance().signOut()
     }
-
+     //Executa o cadastro do usuario no Firebase
      fun cadastroDadosUsuario( )  {
-
-        val bancoDeDados = FirebaseFirestore.getInstance()
 
         //Lista para nome usuario
         val usuario = hashMapOf(
@@ -38,10 +44,7 @@ class UserViewModel : ViewModel(){
             "Senha" to senhaCadastro
         )
 
-        //Captura dados atuais do usuario no banco de dados
-        val idUsuario = Firebase.auth.currentUser?.uid.toString()
-
-        //Salva dados no Firestore/firabase
+         //Salva dados no Firestore/firabase
         bancoDeDados.collection("banco_usuários").document(idUsuario).set(usuario).addOnSuccessListener {
 
             Log.d("bancdads", "Sucesso ao salvar")
@@ -51,13 +54,14 @@ class UserViewModel : ViewModel(){
 
     }
 
+    //Autentica a entrada do usuario
 
+
+
+    //Recebe os dados do banco de dados e exibe ao usuario
      fun atualizarDadosPerfilUsurio() = viewModelScope.launch{
 
-        val bancoDeDados = FirebaseFirestore.getInstance().collection("banco_usuários")
-        val idUsuario = Firebase.auth.currentUser?.uid.toString()
-
-        bancoDeDados.document(idUsuario).get().addOnSuccessListener { documentSnapshot ->
+         bancoDeDados.collection("banco_usuários").document(idUsuario).get().addOnSuccessListener { documentSnapshot ->
 
             if ( documentSnapshot != null) {
 

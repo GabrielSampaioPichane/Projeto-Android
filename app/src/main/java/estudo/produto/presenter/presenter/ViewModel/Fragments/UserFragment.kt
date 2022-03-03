@@ -1,4 +1,4 @@
-package estudo.produto.presenter.presenter.ViewModel.fragmentHome
+package estudo.produto.presenter.presenter.ViewModel.Fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,11 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import estudo.produto.presenter.databinding.FragmentUsuarioBinding
 import estudo.produto.presenter.presenter.LoginActivity
-import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
 import estudo.produto.presenter.DadosRepositoryViewModels.UserViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -49,7 +47,7 @@ class UserFragment : Fragment() {
 
     //recolhe os dados do banco de dados pelo ViewModel e exibe
        private suspend fun dadosAtualizados(){
-         delay(800)
+         delay(1000)
           nomeUser.text = viewModel.nome
           emailUser.text = viewModel.email
 

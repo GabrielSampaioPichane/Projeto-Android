@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/silver"
-    tools:context=".presenter.ViewModel.fragmentHome.NoticeFragment">
+    tools:context=".presenter.ViewModel.Fragments.NoticeFragment">
 
     <View
         android:id="@+id/lista_de_noticias"

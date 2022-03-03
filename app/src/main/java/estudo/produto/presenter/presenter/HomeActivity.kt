@@ -4,21 +4,17 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleCoroutineScope
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.whenStarted
 import estudo.produto.presenter.R
-import estudo.produto.presenter.databinding.ActivityInicialBinding
 import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
-import estudo.produto.presenter.DadosRepositoryViewModels.UserViewModel
-import estudo.produto.presenter.presenter.ViewModel.fragmentHome.NoticeFragment
-import estudo.produto.presenter.presenter.ViewModel.fragmentHome.SearchFragment
-import estudo.produto.presenter.presenter.ViewModel.fragmentHome.UserFragment
+import estudo.produto.presenter.databinding.ActivityHomeBinding
+import estudo.produto.presenter.presenter.ViewModel.Fragments.NoticeFragment
+import estudo.produto.presenter.presenter.ViewModel.Fragments.SearchFragment
+import estudo.produto.presenter.presenter.ViewModel.Fragments.UserFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HomeActivity : AppCompatActivity() {
-     private lateinit var binding: ActivityInicialBinding
+     private lateinit var binding: ActivityHomeBinding
      private lateinit var userFragment : UserFragment
      private lateinit var noticeFragment : NoticeFragment
      private lateinit var searchFragment : SearchFragment
@@ -27,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
      private lateinit var notice : TextView
      private lateinit var search : TextView
      override fun onCreate(savedInstanceState: Bundle?) {
-         binding = ActivityInicialBinding.inflate(layoutInflater)
+         binding = ActivityHomeBinding.inflate(layoutInflater)
          super.onCreate(savedInstanceState)
          setContentView(binding.root)
          notice = binding.btNotice
