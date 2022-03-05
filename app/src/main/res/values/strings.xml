@@ -7,4 +7,7 @@
     <string name="logoff">Deslogar</string>
     <string name="login"> Entrar </string>
     <string name="entrar">Entrar</string>
+    <string name="news_app">NEWS APP</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
 </resources>

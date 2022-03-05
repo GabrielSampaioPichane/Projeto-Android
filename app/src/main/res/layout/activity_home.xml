@@ -39,8 +39,8 @@
 
     <TextView
         android:layout_marginBottom="4dp"
-        android:id="@+id/bt_busca"
-        android:background="@drawable/ic_search"
+        android:id="@+id/bt_notice"
+        android:background="@drawable/ic_notice"
         android:layout_marginTop="7dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,13 +48,13 @@
         app:layout_constraintStart_toStartOf="@id/utlitarios"
         app:layout_constraintEnd_toEndOf="@id/utlitarios"
         app:layout_constraintTop_toTopOf="@id/utlitarios"
-        app:drawableStartCompat="@drawable/ic_search" />
+        app:drawableStartCompat="@drawable/ic_notice" />
 
     <TextView
             android:layout_marginBottom="4dp"
             android:layout_marginEnd= "240dp"
-            android:id="@+id/bt_notice"
-            android:background="@drawable/ic_notice"
+            android:id="@+id/bt_pesquisa"
+            android:background="@drawable/ic_search"
             android:layout_marginTop="7dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             app:layout_constraintStart_toStartOf="@id/utlitarios"
             app:layout_constraintEnd_toEndOf="@id/utlitarios"
             app:layout_constraintTop_toTopOf="@id/utlitarios"
-            app:drawableStartCompat="@drawable/ic_notice" />
+            app:drawableStartCompat="@drawable/ic_search" />
 
 
         <androidx.fragment.app.FragmentContainerView

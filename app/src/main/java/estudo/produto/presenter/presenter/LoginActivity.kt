@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding : EnterActivityBinding
 
     private lateinit var initialFrag : InitialFragment
-    private lateinit var loginFrag : LoginFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
       binding = EnterActivityBinding.inflate(layoutInflater)

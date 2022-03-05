@@ -6,14 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/silver"
-    tools:context=".presenter.ViewModel.Fragments.NoticeFragment">
+    tools:context=".presenter.ViewModel.Fragments.NãodefinidoFragment">
 
-    <View
-        android:id="@+id/lista_de_noticias"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/Grupodecompoentes"
-        />
 
 
 

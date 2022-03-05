@@ -37,12 +37,12 @@ class InitialFragment : Fragment() {
 
     }
     private suspend fun loginTela(){
-        delay(2000)
+        delay(2800)
         parentFragmentManager.beginTransaction().
         replace(R.id.login_container_fragments, LoginFragment()).commit()
     }
     private suspend fun telaHome(){
-        delay(2000)
+        delay(2800)
         val intent = Intent(activity, HomeActivity ::class.java)
         startActivity(intent)
 

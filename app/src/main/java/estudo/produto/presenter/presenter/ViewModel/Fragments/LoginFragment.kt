@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
@@ -18,6 +19,9 @@ import com.google.firebase.auth.FirebaseAuthException
 import estudo.produto.presenter.R
 import estudo.produto.presenter.databinding.FragmentLoginBinding
 import estudo.produto.presenter.presenter.CadastroActivity
+import estudo.produto.presenter.presenter.HomeActivity
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class LoginFragment : Fragment() {
@@ -71,7 +75,11 @@ class LoginFragment : Fragment() {
 
             if(task.isSuccessful){
                 progressbar.visibility = View.VISIBLE
-                // lifecycleScope.launch{telaHome()}
+                  lifecycleScope.launch{
+                      homeTransaction()
+                  }
+
+
             }else{
                 try{
                     task.getResult(FirebaseAuthException::class.java)
@@ -84,7 +92,11 @@ class LoginFragment : Fragment() {
             }
         }
     }
-
+      private suspend fun homeTransaction(){
+         delay(1300)
+          val intent = Intent (activity, HomeActivity::class.java)
+          startActivity(intent)
+        }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
          return binding.root
