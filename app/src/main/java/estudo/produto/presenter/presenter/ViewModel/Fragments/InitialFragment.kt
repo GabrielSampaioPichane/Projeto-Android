@@ -40,13 +40,16 @@ class InitialFragment : Fragment() {
         delay(2800)
         parentFragmentManager.beginTransaction().
         replace(R.id.login_container_fragments, LoginFragment()).commit()
+
+
+
     }
     private suspend fun telaHome(){
         delay(2800)
         val intent = Intent(activity, HomeActivity ::class.java)
         startActivity(intent)
 
-    }
+            }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
       return binding.root

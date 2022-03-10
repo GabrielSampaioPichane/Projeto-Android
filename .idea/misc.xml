@@ -7,13 +7,16 @@
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/background1.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/button.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/container_components.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/container_news.xml" value="0.1315" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/fragment_shape.xml" value="0.17" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/grupo_usuario.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_add.xml" value="0.1065" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_email.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_notice.xml" value="0.1485" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_pass.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_search.xml" value="0.205" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/ic_user.xml" value="0.167" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/news_text.xml" value="0.1315" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/drawable/text_edits.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_cadastro.xml" value="0.22" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_capa.xml" value="0.22" />
@@ -22,11 +25,22 @@
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/activity_usuario.xml" value="0.22" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/enter_activity.xml" value="0.1" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_blank.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_first_news.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_first_notice.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_initial.xml" value="0.22" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_login.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_naodefinido.xml" value="0.22" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_news_center.xml" value="0.15462962962962962" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_notice.xml" value="0.2" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_notice_center.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_second_news.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_second_notice.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_third_news.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_third_notice.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/fragment_usuario.xml" value="0.22" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/layout_lista.xml" value="0.4026548672566372" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/listaitens_view.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/Servicos_Gerais/app/src/main/res/layout/login_activity.xml" value="0.17864583333333334" />
       </map>
     </option>

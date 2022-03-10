@@ -10,7 +10,16 @@
           <item name="android:layout_margin">20dp</item>
     </style>
 
-
+    <style name="NewsText">
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:maxLength">26</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/news_text</item>
+    </style>
 
 <style name="EditText">
     <item name="android:layout_marginLeft">40dp</item>

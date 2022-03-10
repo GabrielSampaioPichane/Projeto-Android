@@ -1,59 +1,58 @@
 package estudo.produto.presenter.presenter.ViewModel.Fragments
 
-import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebViewClient
-import androidx.activity.OnBackPressedCallback
-import androidx.annotation.RequiresApi
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavHost
 import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
-import estudo.produto.presenter.databinding.FragmentFirstNoticeBinding
-
+import estudo.produto.presenter.R
+import estudo.produto.presenter.databinding.FragmentNewsCenterBinding
+import estudo.produto.presenter.presenter.ViewModel.Fragments.NewsFragments.NoticiaEconomiaFragment
+import estudo.produto.presenter.presenter.ViewModel.Fragments.NewsFragments.NoticiaTecnologiaFragment
+import estudo.produto.presenter.presenter.ViewModel.Fragments.NewsFragments.NoticiasGeraisFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NoticeFragment : Fragment() {
-    private lateinit var binding : FragmentFirstNoticeBinding
+    private lateinit var binding : FragmentNewsCenterBinding
+    private lateinit var noticiaGerais : Button
+    private lateinit var noticiaTecnologia : Button
+    private lateinit var  noticiaEconomia : Button
     private  val viewModel: HomeViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = FragmentFirstNoticeBinding.inflate(layoutInflater)
+        binding = FragmentNewsCenterBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        viewModel.urlWebView()
 
-        /*detecta os eventos de click do botao de voltar do celular, e volta as
-        e volta caso tenha permissão
-        * */
 
-        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if(binding.webview.canGoBack()){
-                    binding.webview.goBack()
-                }else{
-                    isEnabled = false
-                    activity?.onBackPressed()
-                }
-            }
-        })
-    }
+        noticiaGerais = binding.first
+        noticiaTecnologia = binding.second
+        noticiaEconomia = binding.third
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    @SuppressLint("SetJavaScriptEnabled")
-    override fun onStart() {
-        super.onStart()
-        //navegação pelo google
-        binding.webview.apply {
-            settings.safeBrowsingEnabled = true
-            settings.javaScriptEnabled = true
-            webViewClient = WebViewClient()
-            loadUrl(viewModel.url)
+
+        noticiaGerais.setOnClickListener{
+            parentFragmentManager.beginTransaction().
+            replace(R.id.container_fragment, NoticiasGeraisFragment()).addToBackStack(null).commit()
+
         }
-    }
+        noticiaTecnologia.setOnClickListener{
+            parentFragmentManager.beginTransaction().
+            replace(R.id.container_fragment, NoticiaTecnologiaFragment()).addToBackStack(null).commit()
+        }
+        noticiaEconomia.setOnClickListener{
+            parentFragmentManager.beginTransaction().
+            replace(R.id.container_fragment, NoticiaEconomiaFragment()).addToBackStack(null).commit()
+        }
+
+
+
+
+       }
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
         return binding.root
     }
 }

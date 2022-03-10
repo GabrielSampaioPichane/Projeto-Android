@@ -1,14 +1,15 @@
 package estudo.produto.presenter.presenter
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import estudo.produto.presenter.R
 import estudo.produto.presenter.DadosRepositoryViewModels.HomeViewModel
 import estudo.produto.presenter.databinding.ActivityHomeBinding
+import estudo.produto.presenter.presenter.ViewModel.Fragments.ListaFragment
 import estudo.produto.presenter.presenter.ViewModel.Fragments.NoticeFragment
-import estudo.produto.presenter.presenter.ViewModel.Fragments.NãodefinidoFragment
 import estudo.produto.presenter.presenter.ViewModel.Fragments.UserFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,7 +18,7 @@ class HomeActivity : AppCompatActivity() {
      private lateinit var binding: ActivityHomeBinding
      private lateinit var userFragment : UserFragment
      private lateinit var noticeFragment : NoticeFragment
-     private lateinit var searchFragment : NãodefinidoFragment
+     private lateinit var searchFragment : ListaFragment
      private  val viewModel : HomeViewModel by viewModel()
      private lateinit var perfil : TextView
      private lateinit var notice : TextView
@@ -30,9 +31,12 @@ class HomeActivity : AppCompatActivity() {
          search = binding.btPesquisa
          perfil = binding.btPerfil
 
-         searchFragment = NãodefinidoFragment()
+         searchFragment = ListaFragment()
+
          noticeFragment = NoticeFragment()
+
          userFragment = UserFragment()
+
 
          changeFragmentOnClick ()
 

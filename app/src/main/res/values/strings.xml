@@ -10,4 +10,10 @@
     <string name="news_app">NEWS APP</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
+    <string name="economia">Economia</string>
+    <string name="tecnologia">Tecnologia</string>
+    <string name="noticias_gerais">Noticias Gerais</string>
+    <string name="central_de_noticias">Central de Noticias</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="remover">remover</string>
 </resources>
