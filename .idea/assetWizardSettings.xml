@@ -94,7 +94,7 @@
                                               <map>
                                                 <entry key="color" value="ffffff" />
                                                 <entry key="fontFamily" value="Calibri" />
-                                                <entry key="scalingPercent" value="83" />
+                                                <entry key="scalingPercent" value="131" />
                                                 <entry key="text" value="&#10;News App" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
@@ -109,7 +109,7 @@
                                               <map>
                                                 <entry key="color" value="ffffff" />
                                                 <entry key="fontFamily" value="Calibri" />
-                                                <entry key="scalingPercent" value="83" />
+                                                <entry key="scalingPercent" value="131" />
                                                 <entry key="text" value="&#10;News App" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
@@ -122,9 +122,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="1f1f1f" />
                                       <entry key="foregroundAssetType" value="TEXT" />
-                                      <entry key="previewDensity" value="XXXHIGH" />
-                                      <entry key="showSafeZone" value="false" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -288,12 +287,6 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                    </map>
-                                  </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="previewDensity" value="XXXHIGH" />
-                                      <entry key="showSafeZone" value="false" />
                                     </map>
                                   </option>
                                 </PersistentState>

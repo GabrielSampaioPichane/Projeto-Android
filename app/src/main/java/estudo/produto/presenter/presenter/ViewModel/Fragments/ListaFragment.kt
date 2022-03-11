@@ -1,5 +1,6 @@
 package estudo.produto.presenter.presenter.ViewModel.Fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import estudo.produto.presenter.databinding.FragmentNaodefinidoBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.*
 
 @Suppress("UNUSED_EXPRESSION")
 class ListaFragment : Fragment( ) {
@@ -46,8 +48,45 @@ class ListaFragment : Fragment( ) {
       dadosListaAtualizado()
 
      }
-  }
 
+     val helper = androidx.recyclerview.widget.ItemTouchHelper (
+         ListHelper(androidx.recyclerview.widget.ItemTouchHelper.UP or androidx.recyclerview.widget.ItemTouchHelper.DOWN,
+             androidx.recyclerview.widget.ItemTouchHelper.LEFT or androidx.recyclerview.widget.ItemTouchHelper.RIGHT) )
+
+         helper.attachToRecyclerView(listaCamp)
+     }
+
+    inner class ListHelper (dragDirs : Int, swipeDirs : Int): androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback(
+        dragDirs, swipeDirs
+
+    ){
+
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            target: RecyclerView.ViewHolder
+        ): Boolean {
+              val from = viewHolder.adapterPosition
+            val to = target.adapterPosition
+
+       Collections.swap(adapter.itens, from, to)
+       adapter.notifyItemMoved(from, to)
+
+                return true
+        }
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+          adapter.itens.removeAt(viewHolder.adapterPosition)
+            adapter.notifyItemRemoved(viewHolder.adapterPosition)
+
+
+        }
+
+
+    }
+
+
+   @SuppressLint("NotifyDataSetChanged")
    private fun dadosListaAtualizado(){
 
         val textoDigitado = textCamp.text.toString()
@@ -56,10 +95,11 @@ class ListaFragment : Fragment( ) {
 
            adapter.itens.add(dados {dadosLista = textoDigitado })
 
-           adapter.notifyItemInserted(0)
+           adapter.notifyDataSetChanged()
 
            listaCamp.scrollToPosition(0)
 
+           textCamp.text.clear()
        }
 
 
